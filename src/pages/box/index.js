@@ -4,7 +4,7 @@ import { distanceInWords } from "date-fns";
 import pt from "date-fns/locale/pt";
 import { MdInsertDriveFile } from "react-icons/md";
 import Dropzone from "react-dropzone";
-import socket from " socket.io-client";
+import socket from "socket.io-client";
 
 import logo from "../../assets/logo.svg";
 import "./styles.css";
@@ -64,7 +64,12 @@ export default class box extends Component {
           {this.state.box.files &&
             this.state.box.files.map(file => (
               <li key={file._id}>
-                <a className="fileInfo" href={file.url} target="_blank">
+                <a
+                  className="fileInfo"
+                  href={file.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <MdInsertDriveFile size={24} color="#A5Cfff" />
                   <strong>{file.title}</strong>
                 </a>
